@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Note : data.srv01 correspond à la clé dans data.json
             serveurElement.textContent = data.srv01;
 
+            // Coloration du texte selon le statut :
+            // Si "En Ligne" (insensible à la casse et espaces), on met en vert, sinon en rouge.
+            const srvStatus = String(data.srv01 || '').trim().toLowerCase();
+            if (srvStatus === 'en ligne') {
+                serveurElement.style.color = 'green';
+            } else {
+                serveurElement.style.color = 'red';
+            }
 
             // 6. MISE À JOUR DE LA CAMÉRA (CAM-01)
             // On "attrape" l'autre cible

@@ -43,6 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // On met à jour son contenu
             // Note : data.cam01 correspond à la clé dans data.json
             cameraElement.textContent = data.cam01;
+
+
+            // 7. MISE À JOUR DU PARE-FEU (FW-01)
+            // On "attrape" la cible HTML
+            // Note : 'statut-pare-feu' doit correspondre à l'id du HTML
+            const firewallElement = document.getElementById('statut-pare-feu');
+           
+            // On met à jour son contenu
+            // Note : data.fw01 correspond à la clé dans data.json
+            if (firewallElement) {
+                firewallElement.textContent = data.fw01;
+            }
         });
 
 
